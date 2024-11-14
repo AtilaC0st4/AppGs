@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "664626018215",
+    "project_id": "odontoprev-watch",
+    "storage_bucket": "odontoprev-watch.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664626018215:android:8315add88c642277ff2882",
+        "android_client_info": {
+          "package_name": "com.example.odontoprev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfe1QZiatsC5dBld3Z2cvM7ZeYZ68ahfw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

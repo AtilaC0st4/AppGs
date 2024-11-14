@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroud"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnAcessarLogin"
+        android:layout_width="175dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="76dp"
+        android:backgroundTint="@color/primaria"
+        android:text="Entre"
+        android:textColor="@color/fonte"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewApresentação" />
+
+    <TextView
+        android:id="@+id/textViewOu"
+        android:layout_width="45dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/akaya_telivigala"
+        android:text=" ou"
+        android:textColor="@color/fonte"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAcessarLogin" />
+
+    <Button
+        android:id="@+id/btnAcessarCadastro"
+        android:layout_width="175dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/secundaria"
+        android:text="Cadastre-se"
+        android:textColor="@color/fonte"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOu"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/Logo" />
+
+    <TextView
+        android:id="@+id/textViewApresentação"
+        android:layout_width="350dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/akaya_telivigala"
+        android:text="Entre e comece a transformar seu dia a dia com dicas simples para um futuro mais sustentável!"
+        android:textAlignment="center"
+        android:textColor="@color/fonte"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
