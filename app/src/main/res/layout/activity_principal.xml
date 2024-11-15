@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroud"
     tools:context=".PrincipalActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -36,7 +37,7 @@
                 android:layout_width="108dp"
                 android:layout_height="90dp"
                 android:layout_marginTop="8dp"
-                android:src="@drawable/Logo"
+                android:src="@drawable/ecomind"
                 app:layout_constraintEnd_toEndOf="@+id/toolbar"
                 app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
@@ -68,8 +69,8 @@
 
     <FrameLayout
         android:id="@+id/frame_layout"
-        android:layout_width="410dp"
-        android:layout_height="551dp"
+        android:layout_width="408dp"
+        android:layout_height="545dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
@@ -77,9 +78,9 @@
         android:background="@drawable/backgroud"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-        app:layout_constraintVertical_bias="0.142" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

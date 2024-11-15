@@ -11,7 +11,7 @@
         android:id="@+id/textViewDica"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="104dp"
         android:fontFamily="@font/akaya_telivigala"
         android:textColor="@color/fonte"
         android:textSize="24sp"
@@ -21,10 +21,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/bntSalvarDica"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/secundaria"
+        android:text="Salvar Dica"
+        android:textColor="@color/fonte"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNovaDica"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <Button
+        android:id="@+id/btnNovaDica"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="160dp"
         android:backgroundTint="@color/primaria"
         android:text="Nova Dica"
         android:textColor="@color/fonte"
@@ -33,18 +49,4 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDica" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/secundaria"
-        android:text="Salvar Dica"
-        android:textColor="@color/fonte"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

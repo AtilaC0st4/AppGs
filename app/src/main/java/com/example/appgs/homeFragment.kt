@@ -1,59 +1,106 @@
 package com.example.appgs
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.example.appgs.databinding.FragmentHomeBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.FirebaseFirestore
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [homeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class homeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
+
+    private val db by lazy {
+        FirebaseFirestore.getInstance()
+    }
+
+    private val dicas by lazy {
+        mutableListOf<String>()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+        binding.btnNovaDica.setOnClickListener {
+            carregarDicas() // Carrega as dicas antes de sortear
+        }
+
+        binding.bntSalvarDica.setOnClickListener {
+            val dicaAtual = binding.textViewDica.text.toString()
+            val uid = FirebaseAuth.getInstance().currentUser?.uid
+
+            if (uid != null && dicaAtual.isNotEmpty()) {
+                salvarDicaParaUsuario(uid, dicaAtual)
+            } else {
+                Toast.makeText(context, "Erro: Usuário não autenticado ou dica vazia!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment homeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            homeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    fun carregarDicas() {
+        db.collection("dicas")
+            .get()
+            .addOnSuccessListener { result ->
+                dicas.clear()
+                for (document in result) {
+                    document.getString("texto")?.let { dicas.add(it) }
+                }
+
+                // Depois de carregar as dicas, sorteia uma e exibe
+                val dica = sortearDica()
+                if (dica != null) {
+                    binding.textViewDica.text = dica
+                } else {
+                    binding.textViewDica.text = "Nenhuma dica disponível no momento."
                 }
             }
+            .addOnFailureListener { exception ->
+                // Tratar erros, como exibir uma mensagem ao usuário
+                Toast.makeText(context, "Erro ao carregar dicas", Toast.LENGTH_SHORT).show()
+            }
     }
+
+    fun sortearDica(): String? {
+        if (dicas.isNotEmpty()) {
+            val indiceAleatorio = (dicas.indices).random()
+            return dicas[indiceAleatorio]
+        }
+        return null // Caso a lista esteja vazia\
+    }
+
+    fun salvarDicaParaUsuario(uid: String, dica: String) {
+        val userRef = db.collection("usuarios").document(uid)
+
+        // Atualiza ou cria o campo dicasSalvas com a dica
+        userRef.update("dicasSalvas", FieldValue.arrayUnion(dica))
+            .addOnSuccessListener {
+                Toast.makeText(context, "Dica salva com sucesso!", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener { exception ->
+                // Caso o documento não exista, cria um novo
+                userRef.set(mapOf("dicasSalvas" to listOf(dica)))
+                    .addOnSuccessListener {
+                        Toast.makeText(context, "Dica salva com sucesso!", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener { error ->
+                        Toast.makeText(context, "Erro ao salvar dica: ${error.message}", Toast.LENGTH_SHORT).show()
+                    }
+            }
+    }
+
 }
