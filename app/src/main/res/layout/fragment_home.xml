@@ -11,7 +11,9 @@
         android:id="@+id/textViewDica"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginRight="10dp"
         android:fontFamily="@font/akaya_telivigala"
         android:textColor="@color/fonte"
         android:textSize="24sp"
@@ -19,6 +21,20 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnNovaDica"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:backgroundTint="@color/primaria"
+        android:text="Nova Dica"
+        android:textColor="@color/fonte"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDica" />
 
     <Button
         android:id="@+id/bntSalvarDica"
@@ -34,19 +50,5 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNovaDica"
-        app:layout_constraintVertical_bias="0.04" />
-
-    <Button
-        android:id="@+id/btnNovaDica"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="160dp"
-        android:backgroundTint="@color/primaria"
-        android:text="Nova Dica"
-        android:textColor="@color/fonte"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDica" />
+        app:layout_constraintVertical_bias="0.053" />
 </androidx.constraintlayout.widget.ConstraintLayout>

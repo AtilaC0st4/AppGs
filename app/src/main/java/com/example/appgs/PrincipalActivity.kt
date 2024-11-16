@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.appgs.databinding.ActivityPrincipalBinding
 
+
 class PrincipalActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityPrincipalBinding.inflate(layoutInflater)
@@ -29,7 +30,7 @@ class PrincipalActivity : AppCompatActivity() {
                     replaceFragment(favoritoFragment())
                 }
                 R.id.perfil -> {
-                    replaceFragment(perfilFragment())
+                    replaceFragment(PerfilFragment())
                 }
             }
             true
