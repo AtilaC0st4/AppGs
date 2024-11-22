@@ -1,7 +1,8 @@
 EcoMind
 
 
-Aplicativo desenvolvido em Kotlin no Android Studio com o propósito de promover práticas sustentáveis. Ao realizar login, o usuário recebe dicas para aplicar no cotidiano, podendo salvar suas favoritas e gerenciá-las facilmente.
+Aplicativo desenvolvido em Kotlin no Android Studio com o propósito de promover práticas sustentáveis. 
+Ao realizar login, o usuário recebe dicas para aplicar no cotidiano, podendo salvar suas favoritas e gerenciá-las facilmente.
 
 ---
 
