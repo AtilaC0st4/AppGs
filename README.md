@@ -30,6 +30,9 @@ https://www.figma.com/design/dImkAShWDqsIp7wuTo2KeZ/Ecomind?node-id=0-1&t=9jpY8U
   Sincronize o Gradle e inicie o aplicativo em um emulador ou dispositivo físico.
 
 👥 Equipe de Desenvolvimento
-  Átila - Backend e integrações.
-  [OUTRO INTEGRANTE] - Design e frontend.
-  [OUTRO INTEGRANTE] - Testes e documentação.
+   
+      Átila Costa – RM5526250 
+      Gabriel Leal – RM553779 
+      Gabriel Plasa – RM553527 
+
+ 
