@@ -11,6 +11,12 @@ https://www.figma.com/design/dImkAShWDqsIp7wuTo2KeZ/Ecomind?node-id=0-1&t=9jpY8U
 
 ---
 
+    Link do Vídeo Demonstrativo:
+
+	https://youtube.com/shorts/w2_81El-JDc?feature=share 
+
+---
+
 🛠️ Funcionalidades
 - Receber dicas sustentáveis: Exibe uma dica sustentável ao usuário após o login.
 - Salvar dicas favoritas: Permite armazenar dicas favoritas em uma área dedicada.
